@@ -5,7 +5,7 @@ var path = require('path');
 var spawn = require('child_process').spawn;
 
 
-var cm = 'npm install sequelize --save';
+var cm = 'npm -v';
 var child = spawn(cm);
 
 
