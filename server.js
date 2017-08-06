@@ -2,17 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
-var spawn = require('child_process').spawn;
-
-
-var cm = 'ls /usr/bin';
-var child = spawn(cm);
-
-
-child.stdout.on('data', function(data) {
-    console.log('stdout: ' + data);
-    //Here is where the output goes
-});
+console.log(process);
 
 var app = express();
 app.use(morgan('combined'));
