@@ -1,13 +1,10 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var exec = require('child_process').exec;
+var sequelize = require('sequelize');
 
-exec('npm install sequelize pg pg-hstore',function(err,stdout,stderr){
-    if(err) throw errl
-    else
-        console.log('RAN');
-});
+console.log(sequelize);
+
 var app = express();
 app.use(morgan('combined'));
 
