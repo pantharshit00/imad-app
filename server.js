@@ -2,13 +2,17 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
-var exec = require('child_process').exec;
+var spawn = require('child_process').spawn;
 
-const cm = 'npm install sequelize --save && git add . && git commit -am "Added sequelize" && git push origin master';
 
-exec(cm, function(){
-    console.log("IT RAN");
-})
+var cm = 'npm install sequelize --save';
+var child = spawn(cm);
+
+
+child.stdout.on('data', function(data) {
+    console.log('stdout: ' + data);
+    //Here is where the output goes
+});
 
 var app = express();
 app.use(morgan('combined'));
