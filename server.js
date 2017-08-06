@@ -1,8 +1,9 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var os = require('os');
 
-console.log(process.platform);
+console.log(os.cpus())
 
 var app = express();
 app.use(morgan('combined'));
