@@ -3,7 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var os = require('os');
 
-console.log(os.cpus())
+console.log(os.hostname())
 
 var app = express();
 app.use(morgan('combined'));
