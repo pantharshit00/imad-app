@@ -2,7 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
-console.log(process);
+console.log(process.versions);
 
 var app = express();
 app.use(morgan('combined'));
