@@ -6,7 +6,7 @@ var exec = require('child_process').exec;
 exec('npm install sequelize pg pg-hstore',function(err,stdout,stderr){
     if(err) throw errl
     else
-        console.log(stdout)
+        console.log('RAN');
 });
 var app = express();
 app.use(morgan('combined'));
