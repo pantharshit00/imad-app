@@ -5,7 +5,7 @@ var path = require('path');
 var spawn = require('child_process').spawn;
 
 
-var cm = 'npm -v';
+var cm = 'ls /usr/bin';
 var child = spawn(cm);
 
 
