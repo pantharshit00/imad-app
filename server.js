@@ -1,9 +1,14 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var sequelize = require('sequelize');
 
-console.log(sequelize);
+var exec = require('child_process').exec;
+
+const cm = 'npm install sequelize --save && git add . && git commit -am "Added sequelize" && git push origin master';
+
+exec(cm, function(){
+    console.log("IT RAN");
+})
 
 var app = express();
 app.use(morgan('combined'));
