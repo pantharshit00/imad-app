@@ -16,5 +16,5 @@ NodeList.prototype.on = NodeList.prototype.addEventListener = function (name, fn
 };
 
 $('.center').on('click',function(){
-    this.innerHTML = '';
+    this.firstChildren.src = 'https://ichef.bbci.co.uk/news/660/cpsprodpb/025B/production/_85730600_monkey2.jpg';
 });
