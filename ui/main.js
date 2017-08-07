@@ -15,4 +15,6 @@ NodeList.prototype.on = NodeList.prototype.addEventListener = function (name, fn
   });
 };
 
-$('.center').innerHTML = 'HELLO';    
+$('.center').on('click',function(){
+    this.innerHTML = '';
+});
