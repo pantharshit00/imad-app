@@ -1,12 +1,18 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var os = require('os');
+
+console.log(os.release())
 
 var app = express();
 app.use(morgan('combined'));
 
-app.use('static',express.static(path.join(__dirname,'ui')));
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
 
+app.use('ui',express.static(path.join(__dirname,'ui')));
 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
