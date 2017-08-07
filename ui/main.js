@@ -15,6 +15,4 @@ NodeList.prototype.on = NodeList.prototype.addEventListener = function (name, fn
   });
 };
 
-$(window).on('load',function(){
-    $('center').innerHTML = 'HELLO';    
-})
+$('center').innerHTML = 'HELLO';    
