@@ -15,7 +15,7 @@ function db_generate_query(table, where, value){
     return `SELECT * FROM "${table}" WHERE "${where}" = "${value}"`;
 }
 
-pool.query(db_generate_query("user","id",1),function(err,res){
+pool.query(db_generate_query("user","id",0),function(err,res){
     if(err) throw err;
     console.log(res.rows[0]);
 })
