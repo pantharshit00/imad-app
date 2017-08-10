@@ -12,7 +12,7 @@ const pool = new pg.Pool({
 });
 
 function db_generate_query(table, where, value){
-    return `SELECT * FROM "${table}" WHERE "${where}" = "${value}"`;
+    return `SELECT * FROM "${table}" WHERE "${where}" = ${value}`;
 }
 
 pool.query(db_generate_query("user","id",0),function(err,res){
