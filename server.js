@@ -12,7 +12,7 @@ const pool = new pg.Pool({
 });
 
 pool.query('SELECT NOW()', (err, res) => {
-  console.log(err, res.rows[0]);
+  console.log(res.rows[0]);
   pool.end();
 });
 
