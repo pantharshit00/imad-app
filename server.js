@@ -11,10 +11,14 @@ const pool = new pg.Pool({
   password: process.env.DB_PASSWORD,
 });
 
-pool.query('SELECT NOW()', (err, res) => {
-  console.log(res.rows[0]);
-  pool.end();
-});
+function db_generate_query(table, where, value){
+    return `SELECT * FROM "${table}" WHERE "${where}" = "${value}"`;
+}
+
+pool.query(db_generate_query(user,id,1),function(err,res){
+    if(err) throw err;
+    console.log(res.rows[0]);
+})
 
 var app = express();
 app.use(morgan('combined'));
