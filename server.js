@@ -15,6 +15,7 @@ const test = async function(){
     await console.log('test');
 }
 
+test();
 
 var app = express();
 app.use(morgan('combined'));
