@@ -2,8 +2,19 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var os = require('os');
+var {Pool} = require('pg');
 
-console.log(os.release())
+const pool = new Pool({
+  user: 'pantharshit00',
+  host: 'db.imad.hasura-app.io',
+  database: 'pantharshit00',
+  password: process.env.DB_PASSWORD,
+});
+
+const test = async function(){
+    await console.log('test');
+}
+
 
 var app = express();
 app.use(morgan('combined'));
